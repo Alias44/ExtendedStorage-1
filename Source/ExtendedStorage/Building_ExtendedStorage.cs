@@ -172,6 +172,8 @@ public class Building_ExtendedStorage : Building_Storage, IUserSettingsOwner
             GenMapUI.DrawThingLabel(thing, _label, textColor);
         }
     }
+	
+	public bool Accepts(Thing t) => _storedThingDef == null ? base.Accepts(t) : _storedThingDef.Equals(t);
 
     public override void Draw()
     {
